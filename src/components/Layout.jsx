@@ -1,17 +1,27 @@
-import { Link, Outlet } from 'react-router-dom'
-import '../App.css'
+import { Outlet } from 'react-router-dom';
+import Header from './Header.jsx';
 
 export default function Layout() {
   return (
-    <div>
-      <nav className="m-3">
-        <Link to="/" className="me-3">Home</Link>
-        <Link to="/about/">About</Link>
-      </nav>
-
-      <main>
-        <Outlet />
-      </main>
+    <div className="scrapbook-wrapper">
+      <div className="scrapbook-container">
+        <Header />
+        
+        <main className="scrapbook-main">
+          <Outlet />
+        </main>
+        
+        <footer className="scrapbook-footer">
+          <div className="footer-content text-center">
+            <div className="footer-line">
+              <span>✦</span>
+            </div>
+            <p className="footer-copyright">
+              Sueños 2026 Trip Journal — Made with ♥ and wanderlust
+            </p>
+          </div>
+        </footer>
+      </div>
     </div>
-  )
+  );
 }
